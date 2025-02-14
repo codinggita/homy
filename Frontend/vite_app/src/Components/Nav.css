@@ -1,0 +1,121 @@
+/* Navbar.css */
+
+.navbar {
+    background: linear-gradient(to right, #ffffff, );
+    color: #333;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    max-width: fit-content;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 110px;
+    text-align: center;
+    justify-content: center;
+
+  }
+  .nav-menu>li{
+    width: max-content;
+  }
+  .nav-menu .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu .nav-link:hover {
+    color: #007bff;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+    max-width: fit-content;
+  }
+  
+  .login-button, .logout-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .logout-button {
+    background: #dc3545;
+  }
+  
+  .login-button:hover {
+    background: #0056b3;
+  }
+  
+  .logout-button:hover {
+    background: #b02a37;
+  }
+  
+  .menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .content {
+    padding-top: 80px; /* Adjust if needed */
+    
+}
+
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 15px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  

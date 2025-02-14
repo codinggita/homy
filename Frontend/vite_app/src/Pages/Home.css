@@ -1,0 +1,145 @@
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  /* Section Title */
+  .section-title, .features-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Box Container */
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1100px;
+  }
+  
+  /* Content Box */
+  .content-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual Card */
+  .card {
+    background-color: white;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .card-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Features Section */
+  .features-section {
+    width: 90%;
+    max-width: 1100px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* Features Container */
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Feature Item */
+  .feature-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Feature Icon */
+  .feature-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  /* Feature Title */
+  .feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  /* Feature Description */
+  .feature-description {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .box-container {
+      width: 100%;
+    }
+  
+    .features-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
