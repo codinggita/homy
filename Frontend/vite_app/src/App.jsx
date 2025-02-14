@@ -9,11 +9,17 @@ import Community from './Pages/Community.jsx'
 import Meal from './Pages/Meal.jsx'
 import Login from './Components/LogIn.jsx'
 
+
 // import Navbar from "./Components/Navbar.jsx";
 
 const App = () => {
   return (
+
+
+    <div>
     <BrowserRouter>
+    {/* <Navbar/> */}
+    <div className="content"></div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -28,6 +34,7 @@ const App = () => {
 
       </Routes>
     </BrowserRouter>
+    </div>
   )
 };
 const root = ReactDOM.createRoot(document.getElementById('root'));
