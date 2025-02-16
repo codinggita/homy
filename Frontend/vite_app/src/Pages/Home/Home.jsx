@@ -232,9 +232,11 @@
 import React from "react";
 import img from "../assets/Frame 2.png";
 import "./Home.css";
-import FeatureSection from "./Feature.jsx";
-import AccommodationAndFood from "./AccommodationAndFood"; // Import the new section
-// import AboutUs from "./About.jsx"
+import FeatureSection from "./feature.jsx";
+import AccommodationAndFood from "./AccommodationAndFood.jsx"; // Import the new section
+import AboutUs from "./About.jsx"
+import CustomerReviews from './review.jsx'
+import Footer from "./Footer.jsx";
 
 const Home = () => {
   return (
@@ -243,16 +245,30 @@ const Home = () => {
         <img src={img} alt="" className="main-image" />
         
 
-        {/* Unified Section for Hostel & Food */}
+       <div className="main-section">
+        <section className="AccommodationAndFoodsection">
         <AccommodationAndFood />
-
-        <section className="features-section">
-          <FeatureSection />
         </section>
+       
 
-        <section className="AboutUs">
-       {/* <AboutUs/> */}
-        </section>
+<section className="features-section">
+  <FeatureSection />
+</section>
+
+<section className="AboutUs">
+<AboutUs/>
+</section>
+
+<section className="review">
+<CustomerReviews/>
+ 
+</section>
+
+<section className="Footer">
+<Footer/>
+</section>
+       </div>
+
       </main>
     </>
   );

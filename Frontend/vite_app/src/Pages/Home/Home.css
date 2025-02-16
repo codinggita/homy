@@ -8,8 +8,29 @@
     text-align: center;
     padding: 20px;
     background-color: #f8f8f8;
+
   }
-  
+  .main-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    gap: 50px;
+  }
+  .AccommodationAndFoodsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    /* padding: 20px; */
+    background-color: #f8f8f8;
+  }
   /* Section Title */
   .section-title, .features-title {
     font-size: 26px;
@@ -25,6 +46,7 @@
     gap: 30px;
     width: 90%;
     max-width: 1100px;
+
   }
   
   /* Content Box */
@@ -87,7 +109,6 @@
   .features-section {
     width: 90%;
     max-width: 1100px;
-    margin-top: 50px;
     text-align: center;
   }
   
