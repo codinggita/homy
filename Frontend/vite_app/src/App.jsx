@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import Layout from "./Pages/Layout.jsx";
-import Home from "./Pages/Home.jsx";
-import HostelList from './Pages/Hostel/HostelList.jsx'
+import Home from "./Pages/Home/Home.jsx";
+import HostelList from './Pages/Hostel/Hostelmain.jsx'
 import Community from './Pages/Community.jsx'
 import Meal from './Pages/Meal.jsx'
 import Login from './Components/LogIn.jsx'

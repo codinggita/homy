@@ -230,7 +230,6 @@
 
 
 import React from "react";
-import img from "../assets/Frame 2.png";
 import "./Home.css";
 import FeatureSection from "./feature.jsx";
 import AccommodationAndFood from "./AccommodationAndFood.jsx"; // Import the new section
@@ -242,7 +241,7 @@ const Home = () => {
   return (
     <>
       <main className="main-container">
-        <img src={img} alt="" className="main-image" />
+        <img src="https://res.cloudinary.com/doqzxuxb1/image/upload/v1739766601/Homy/wjey0vqwukh9kn07b5di.png" alt="" className="main-image" />
         
 
        <div className="main-section">
