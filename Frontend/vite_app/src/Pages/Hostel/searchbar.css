@@ -1,40 +1,49 @@
 /* General Styling */
 .container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+width: fit-content;
+justify-items: center;
+padding: 30px 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
 }
 
 /* Title */
 .title {
   font-size: 24px;
-  margin-bottom: 20px;
   font-weight: bold;
   color: #333;
+  text-align: center;
 }
 
 /* Hostel Grid */
-.hostel-grid {
-  display: grid;
+.hostel-grid { 
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   justify-items: center;
+  border: 1px solid yellow; */
 }
 
 /* Hostel Card */
 .hostel-card {
+  display: flex;
+  gap: 10px;
   background-color: white;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  width: 280px;
-  text-align: center;
+  width: 750px; 
   transition: transform 0.2s ease-in-out;
+  border: 1px solid blue;
 }
 
 .hostel-card:hover {
@@ -45,6 +54,7 @@
 .hostel-image {
   width: 100%;
   max-height: 180px;
+  max-width: 350px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -62,7 +72,8 @@
 
 /* Buttons */
 .buttons {
-  margin-top: 10px;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .visit-btn, .view-more-btn {
@@ -99,4 +110,13 @@
   font-size: 16px;
   color: #777;
   margin-top: 20px;
+}
+.search-bar {
+
+  width:500px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 22px;
 }
