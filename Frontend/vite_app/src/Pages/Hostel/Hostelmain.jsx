@@ -2,6 +2,7 @@ import React from "react";
 import "./Hostelmain.css"
 import HostelSearch from "./Search.jsx";
 import Faq from "./faqs.jsx";
+import Footer from '../Home/Footer.jsx'
 const HostelList=()=>{
 
 
@@ -17,7 +18,10 @@ const HostelList=()=>{
        <section className="Faqsection">
 <Faq/>
        </section>
+        <section className="Footer section">
+        <Footer/>
 
+        </section>
     </main>
    
     </>)
