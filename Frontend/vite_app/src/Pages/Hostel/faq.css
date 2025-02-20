@@ -1,0 +1,23 @@
+.mainfaq{
+    width: 100%;
+    max-width: 900px;
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+.mainfaq>.answers>section>h2{
+    font-size:20px;
+    font-weight: 550;
+}
+.answers{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.Title{
+    width: 100%;
+    font-size:45px;
+    text-align: center;
+    margin-bottom: 15px;
+}
