@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hostelmain.css"
 import HostelSearch from "./Search.jsx";
+import Faq from "./faqs.jsx";
 const HostelList=()=>{
 
 
@@ -13,7 +14,9 @@ const HostelList=()=>{
        <HostelSearch/>
 
        </section>
-   
+       <section className="Faqsection">
+<Faq/>
+       </section>
 
     </main>
    
