@@ -1,7 +1,7 @@
 /* Navbar.css */
 
 .navbar {
-    background: linear-gradient(to right, #ffffff, );
+    background-color: white;
     color: #333;
     padding: 15px 20px;
     position: fixed;

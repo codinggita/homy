@@ -122,3 +122,47 @@ gap: 15px;
   border-radius: 5px;
   font-size: 22px;
 }
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter-select, .search-btn, .reset-btn, .details-btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.reset-btn {
+  background-color: #ff6666;
+  color: white;
+  border: none;
+}
+
+.details-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.search-btn:hover {
+  background-color: #218838;
+}
+
+.reset-btn:hover {
+  background-color: #cc0000;
+}
+
+.details-btn:hover {
+  background-color: #0056b3;
+}
