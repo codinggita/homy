@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+const cors=require("cors");
 const PORT=5000;
 
 const {MongoClient}=require("mongodb");// Use To connect With Database
@@ -21,6 +22,23 @@ async function connectDB() {
     
 }
 connectDB();
+
+
+app.use(cors());// For Enabling cors For all Requests
+
+
+// Middleware to parse JSON
+app.use(express.json());
+
+
+// app.use(
+//     cors({
+//       origin: "http://localhost:3000",  Allow requests only from this origin
+//       methods: ["GET", "POST", "PUT", "DELETE"],  Allowed request methods
+//       allowedHeaders: ["Content-Type", "Authorization"],  Allowed headers
+//     })
+//   );
+
 
 
 //Api Routing to fetch the hostel.

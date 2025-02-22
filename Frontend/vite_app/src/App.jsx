@@ -6,7 +6,7 @@ import Layout from "./Pages/Layout.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import HostelList from './Pages/Hostel/Hostelmain.jsx'
 import Community from './Pages/Community.jsx'
-import Meal from './Pages/Meal.jsx'
+import Meal from './Pages/Meal/Meal.jsx'
 import Login from './Components/LogIn.jsx'
 
 
