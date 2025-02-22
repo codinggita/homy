@@ -1,0 +1,151 @@
+.mainsnacks > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mealcard {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+}
+
+.snacks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+}
+
+.snackimg {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.maindesc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.maindesc > h1 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.maindesc > div {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.maindesc > div > span {
+    width: 100%;
+    max-width: fit-content;
+}
+
+.Pricing > span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.Buying {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Buying > button {
+    width: 100%;
+    max-width: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 7px;
+    color: white;
+    background-color: #FFAC33;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.Buying > button:hover {
+    background-color: #e89b2c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .snacks-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .mealcard {
+        max-width: 180px;
+    }
+
+    .snackimg {
+        max-height: 150px;
+    }
+
+    .maindesc > h1 {
+        font-size: 18px;
+    }
+
+    .Pricing > span {
+        font-size: 18px;
+    }
+
+    .Buying > button {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainsnacks > h1 {
+        font-size: 24px;
+    }
+
+    .snacks-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .mealcard {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .snackimg {
+        max-height: 140px;
+    }
+
+    .maindesc > h1 {
+        font-size: 16px;
+    }
+
+    .Pricing > span {
+        font-size: 16px;
+    }
+
+    .Buying {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Buying > button {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
