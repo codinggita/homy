@@ -97,6 +97,8 @@ const MealCard = ({ meal }) => {
 
 const Snacks = () => {
   const [meals, setMeals] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  
 
   useEffect(() => {
     fetchMeals();
@@ -112,12 +114,29 @@ const Snacks = () => {
     }
   };
 
+ // Adding A option for finding the sancks by its name
+ const FilteredHostels=meals.filter(
+  (meal)=>meal.name.toLowerCase().includes(searchQuery.toLowerCase())
+ );
+
+
   return (
     <main className="mainsnacks">
       <h1>Find The Best Snacks and Food in Your Area</h1>
+
+    {/*Searchbar*/}
+    <input
+    type="text"
+    placeholder="Find the best snacks in your area"
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    className="search-bar"
+    
+    />
+
       <div className="snacks-container">
-        {meals.length > 0 ? (
-          meals.map((meal) => <MealCard key={meal.id} meal={meal} />)
+        {FilteredHostels.length > 0 ? (
+          FilteredHostels.map((meal) => <MealCard key={meal.id} meal={meal} />)
         ) : (
           <p>Loading snacks...</p>
         )}
