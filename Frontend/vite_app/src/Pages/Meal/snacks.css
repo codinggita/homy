@@ -132,7 +132,32 @@
     border-radius: 5px;
     font-size: 22px;
   }
-  
+.Quantity{
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    background-color: #FF6B35;
+    color: white;
+    border-radius:10px ;
+    padding: 8px;
+    gap: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: larger;
+}  
+.Quantity>span{
+    width: 100%;
+    max-width: fit-content;
+}
+.add{
+    cursor: pointer;
+    width: 100%;
+    max-width: fit-content;
+}  
+.sub{
+    cursor: pointer;
+    width: 100%;
+    max-width: fit-content;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

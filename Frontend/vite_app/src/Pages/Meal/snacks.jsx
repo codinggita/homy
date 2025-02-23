@@ -71,6 +71,11 @@ import { useNavigate } from "react-router-dom";
 
 const MealCard = ({ meal }) => {
     const navigate = useNavigate();
+    const [count,setCount]=useState(0);
+
+
+    const increaseCount = () => setCount(count + 1);
+const decreaseCount = () => setCount(count >= 1 ? count - 1 : 0);
   
     return (
       <div className="mealcard">
@@ -83,7 +88,12 @@ const MealCard = ({ meal }) => {
           <h1>{meal.name}</h1>
           <div className="Pricing">
             <span>₹{meal.price}</span>
-            <span>Count: {meal.count || 1}</span>
+            <div className="Quantity">
+      <button  onClick={decreaseCount} className="sub" >−</button>
+
+        <span >{count}</span>
+        <button  onClick={increaseCount} className="add" >+</button>
+            </div>
           </div>
           <div className="Buying">
             <button onClick={() => navigate("/")}>Buy Now</button>
@@ -98,6 +108,7 @@ const MealCard = ({ meal }) => {
 const Snacks = () => {
   const [meals, setMeals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
   
 
   useEffect(() => {
@@ -120,9 +131,12 @@ const Snacks = () => {
  );
 
 
+
+
   return (
     <main className="mainsnacks">
       <h1>Find The Best Snacks and Food in Your Area</h1>
+    
 
     {/*Searchbar*/}
     <input
