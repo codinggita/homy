@@ -80,15 +80,15 @@
     margin-top: 15px;
 }
 
-.Buying {
+.buy {
     display: flex;
     gap: 15px;
     justify-content: center;
     margin-top: 20px;
 }
 
-.Buying button {
-    padding: 12px 20px;
+.buy>button {
+    padding: 12px 15px;
     font-size: 18px;
     font-weight: 700;
     border-radius: 10px;
@@ -97,10 +97,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    border: none;
+    border: 1px solid black;
 }
 
-.Buying .buy-now {
+.buy .buy-now {
     background-color: #4f46e5;
     color: white;
     display: flex;

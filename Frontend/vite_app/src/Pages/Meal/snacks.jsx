@@ -95,7 +95,7 @@ const decreaseCount = () => setCount(count >= 1 ? count - 1 : 0);
         <button  onClick={increaseCount} className="add" >+</button>
             </div>
           </div>
-          <div className="Buying">
+          <div className="buy">
             <button onClick={() => navigate("/")}>Buy Now</button>
             <button onClick={() => navigate("/")}>Add To Cart</button>
           </div>
