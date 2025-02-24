@@ -71,6 +71,11 @@ import { useNavigate } from "react-router-dom";
 
 const MealCard = ({ meal }) => {
     const navigate = useNavigate();
+    const [count,setCount]=useState(0);
+
+
+    const increaseCount = () => setCount(count + 1);
+const decreaseCount = () => setCount(count >= 1 ? count - 1 : 0);
   
     return (
       <div className="mealcard">
@@ -83,9 +88,14 @@ const MealCard = ({ meal }) => {
           <h1>{meal.name}</h1>
           <div className="Pricing">
             <span>₹{meal.price}</span>
-            <span>Count: {meal.count || 1}</span>
+            <div className="Quantity">
+      <button  onClick={decreaseCount} className="sub" >−</button>
+
+        <span >{count}</span>
+        <button  onClick={increaseCount} className="add" >+</button>
+            </div>
           </div>
-          <div className="Buying">
+          <div className="buy">
             <button onClick={() => navigate("/")}>Buy Now</button>
             <button onClick={() => navigate("/")}>Add To Cart</button>
           </div>
@@ -97,6 +107,9 @@ const MealCard = ({ meal }) => {
 
 const Snacks = () => {
   const [meals, setMeals] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  
 
   useEffect(() => {
     fetchMeals();
@@ -112,12 +125,32 @@ const Snacks = () => {
     }
   };
 
+ // Adding A option for finding the sancks by its name
+ const FilteredHostels=meals.filter(
+  (meal)=>meal.name.toLowerCase().includes(searchQuery.toLowerCase())
+ );
+
+
+
+
   return (
     <main className="mainsnacks">
       <h1>Find The Best Snacks and Food in Your Area</h1>
+    
+
+    {/*Searchbar*/}
+    <input
+    type="text"
+    placeholder="Find the best snacks in your area"
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    className="search-bar"
+    
+    />
+
       <div className="snacks-container">
-        {meals.length > 0 ? (
-          meals.map((meal) => <MealCard key={meal.id} meal={meal} />)
+        {FilteredHostels.length > 0 ? (
+          FilteredHostels.map((meal) => <MealCard key={meal.id} meal={meal} />)
         ) : (
           <p>Loading snacks...</p>
         )}

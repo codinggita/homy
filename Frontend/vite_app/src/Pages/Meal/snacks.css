@@ -1,151 +1,189 @@
-.mainsnacks > h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
+    /* Modernized Styles */
+.mainsnacks {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.mealcard {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 220px;
+.mainsnacks > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
     text-align: center;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.mainsnacks > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #6b7280;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 30px;
 }
 
 .snacks-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1300px;
 }
 
-.snackimg {
+.mealcard {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 20px;
+}
+
+.mealcard:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.mealcard img {
     width: 100%;
-    max-height: 180px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mealcard:hover img {
+    transform: scale(1.07);
 }
 
 .maindesc {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.maindesc > h1 {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px;
     text-align: center;
 }
 
-.maindesc > div {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+.maindesc h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
 }
 
-.maindesc > div > span {
+.Pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: #ff6b35;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.buy {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buy>button {
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid black;
+}
+
+.buy .buy-now {
+    background-color: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Buying .buy-now:hover {
+    background-color: #4338ca;
+}
+
+.Buying .add-cart {
+    background-color: #f59e0b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Buying .add-cart:hover {
+    background-color: #d97706;
+}
+.search-bar {
+
+    width:500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 22px;
+  }
+.Quantity{
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    background-color: #FF6B35;
+    color: white;
+    border-radius:10px ;
+    padding: 8px;
+    gap: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: larger;
+}  
+.Quantity>span{
     width: 100%;
     max-width: fit-content;
 }
-
-.Pricing > span {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
-
-.Buying {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.Buying > button {
-    width: 100%;
-    max-width: 120px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding: 8px;
-    border-radius: 7px;
-    color: white;
-    background-color: #FFAC33;
-    font-weight: bold;
-    border: none;
+.add{
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.Buying > button:hover {
-    background-color: #e89b2c;
+    width: 100%;
+    max-width: fit-content;
+}  
+.sub{
+    cursor: pointer;
+    width: 100%;
+    max-width: fit-content;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .snacks-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
-    .mealcard {
-        max-width: 180px;
+    .mainsnacks > h1 {
+        font-size: 30px;
     }
 
-    .snackimg {
-        max-height: 150px;
-    }
-
-    .maindesc > h1 {
-        font-size: 18px;
-    }
-
-    .Pricing > span {
-        font-size: 18px;
-    }
-
-    .Buying > button {
-        font-size: 14px;
-        padding: 6px;
+    .mainsnacks > p {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
     .mainsnacks > h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    .snacks-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .mealcard {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .snackimg {
-        max-height: 140px;
-    }
-
-    .maindesc > h1 {
-        font-size: 16px;
-    }
-
-    .Pricing > span {
-        font-size: 16px;
-    }
-
-    .Buying {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Buying > button {
-        max-width: 100%;
+    .mainsnacks > p {
         font-size: 14px;
-        padding: 8px;
+    }
+
+    .mealcard img {
+        height: 200px;
     }
 }
