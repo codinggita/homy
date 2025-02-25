@@ -42,14 +42,25 @@ app.use(express.json());
 
 
 //Api Routing to fetch the hostel.
-app.get('/meals',async(req,res)=>{
-    try{
-     const meals= await collection.find().toArray();
-        res.json(meals); // sending data
-    }catch(error){
-        res.status(500).json({error:"internal server not working"});
+app.get('/meals', async (req, res) => {
+    try {
+        const meals = await collection.find().toArray();
+
+        // Calculate the average rating for each meal
+        const mealsWithRatings = meals.map((meal) => {
+            const avgRating = meal.ratings && meal.ratings.length > 0 
+                ? meal.ratings.reduce((a, b) => a + b, 0) / meal.ratings.length 
+                : 0;
+
+            return { ...meal, avgRating: avgRating.toFixed(1) }; // Limit decimal places
+        });
+
+        res.json(mealsWithRatings); // Sending updated data
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
     }
 });
+
 
 app.get('/meals/:name',async(req,res)=>{
     try{
@@ -61,6 +72,8 @@ app.get('/meals/:name',async(req,res)=>{
     }
     
 })
+
 app.listen(PORT,()=>{
     console.log(`server is running on http://localhost:${PORT}`)
 });
+

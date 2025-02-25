@@ -300,7 +300,7 @@
     "category": "Snacks",
     "description": "A crispy, thin whole wheat snack infused with methi (fenugreek) for an authentic taste.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Methi-khakhra-234x300_nbiuvw.png",
-    "rating": 4.7
+    "ratings": [5, 4, 5, 4, 5]
   },
   {
     "name": "Methi Thepla",
@@ -309,7 +309,7 @@
     "category": "Snacks",
     "description": "A soft and flavorful Indian flatbread made with wheat flour, methi leaves, and spices.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png",
-    "rating": 4.6
+    "ratings": [5, 4, 4, 5, 4]
   },
   {
     "name": "Farsan Combo of 6",
@@ -318,7 +318,7 @@
     "category": "Snacks",
     "description": "A combination of six different traditional Gujarati farsan snacks, perfect for any occasion.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/16_unhzfe.png",
-    "rating": 4.8
+    "ratings": [5, 5, 5, 4, 5]
   },
   {
     "name": "Mango Pickle",
@@ -327,7 +327,7 @@
     "category": "Pickles",
     "description": "A spicy and tangy traditional mango pickle made with the perfect blend of spices.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137497/Sweet-mango-210x300_gp6ywr.png",
-    "rating": 4.5
+    "ratings": [4, 5, 4, 4, 5]
   },
   {
     "name": "Masala Bhakri",
@@ -336,16 +336,15 @@
     "category": "Snacks",
     "description": "A crispy and flavorful Indian flatbread seasoned with a special blend of spices.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Chili-Garlic-Bhakari_am1iac.png",
-    "rating": 4.7
+    "ratings": [5, 4, 5, 5, 4]
   },
   {
-    "name": "Farshan",
-    "price": 80,
+    "name": "Nylon Sec",
+    "price": "80/500gm",
     "quantity": "500gm",
     "category": "Snacks",
     "description": "A crispy and flavorful Indian flatbread seasoned with a special blend of spices.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/Mix-Farshan-251x300_pyw19f.png",
-    "rating": 4.7
+    "ratings": [5, 5, 4, 4, 5]
   }
 ]
-
