@@ -1,81 +1,16 @@
-// import React, { useEffect, useState } from "react";
-// import './snacks.css'
-// import { useNavigate } from "react-router-dom";
-
-
-// const Snacks = () => {
-
-//     const [meals,setmeals]=useState([])
-
-// useEffect(()=>{
-//     fetchmeals();
-// },[]);
-
-// const fetchmeals=async()=>{
-//     try{
-//         const response=await fetch("http://localhost:5000/meals")
-//         const data=await response.json();
-         
-//         setmeals(data);
-//     } catch(error){
-//         console.log("Error for fetching the data:",error);
-//     }
-// };
-
-//   const navigate = useNavigate();
-
-// const mealcard=({meal})=>{
-//     return(
-
-//             <div className="mealcard">
-//              <img src="https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png" alt="" className="snackimg"/>
-//              <div className="maindesc">
-//                 <h1>Methi Khakhara</h1>
-//                 <div className="Pricing">
-//                 <span>₹50</span>
-//                  <span>Count</span>
-//                 </div>
-
-//                 <div className="Buying">
-                
-//                         <button onClick={()=>navigate('/')}>
-//                             Buy Now
-//                         </button>
-//                         <button onClick={()=>navigate('/')}>Add To Cart</button>
-//                 </div>
-
-//              </div>
-
-//           </div>
-
-//     )
-// };
-
-//     return(
-//         <>
-//         <main className="mainsnacks">
-//         <h1>Find The Best Snacks and Food in your area.</h1>
-//         {meals.map((meal)=>(
-//             <mealcard key={meal.id} meal={meal}/>
-//         ))}
-//         </main>
-//         </>
-//     )
-// };
-// export default Snacks;
-
 
 import React, { useEffect, useState } from "react";
 import "./snacks.css";
 import { useNavigate } from "react-router-dom";
-
+import SearchBar from '../../Components/Search'
 const MealCard = ({ meal }) => {
     const navigate = useNavigate();
-    const [count,setCount]=useState(0);
+    const [count,setCount]=useState(1);
+  
 
 
     const increaseCount = () => setCount(count + 1);
-const decreaseCount = () => setCount(count >= 1 ? count - 1 : 0);
+    const decreaseCount = () => setCount(count > 1 ? count - 1 : 1);
   
     return (
       <div className="mealcard">
@@ -135,19 +70,24 @@ const Snacks = () => {
 
   return (
     <main className="mainsnacks">
-      <h1>Find The Best Snacks and Food in Your Area</h1>
+
+     <div className="Firstpart">
+        <section className="title"> 
+        <h1>Discover Delicious Homemade Food Near You</h1>
+        <p>Authentic home-cooked meals delivered to your doorstep.</p>
+        </section>
+        {/* <h1>Find The Best Snacks and Food in Your Area</h1> */}
+        {/* <div className="search-bar">
+          <input type="text" placeholder="Search for homemade food..."  onChange={(e) => setSearchQuery(e.target.value)}  />
+          <button>Search</button>
+      </div> */}
+
+
+     </div>
+     
     
 
     {/*Searchbar*/}
-    <input
-    type="text"
-    placeholder="Find the best snacks in your area"
-    value={searchQuery}
-    onChange={(e) => setSearchQuery(e.target.value)}
-    className="search-bar"
-    
-    />
-
       <div className="snacks-container">
         {FilteredHostels.length > 0 ? (
           FilteredHostels.map((meal) => <MealCard key={meal.id} meal={meal} />)
