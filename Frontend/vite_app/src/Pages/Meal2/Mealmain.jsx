@@ -9,7 +9,7 @@ const Mealmain=()=>{
       <Snacks/>
      </section>
      <section>
-<Tiffin/>
+    <Tiffin/>
      </section>
     </main>
     
