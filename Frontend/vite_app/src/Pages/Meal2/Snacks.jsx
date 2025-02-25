@@ -57,6 +57,7 @@ const MealCard = ({ meal }) => {
 const Snacks = () => {
   const [meals, setMeals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredMeals, setFilteredMeals] = useState([]);
 
   useEffect(() => {
     fetchMeals();
@@ -67,14 +68,31 @@ const Snacks = () => {
       const response = await fetch("http://localhost:5000/meals");
       const data = await response.json();
       setMeals(data); // Updating the meals state
+      setFilteredMeals(data);
     } catch (error) {
       console.error("Error fetching the data:", error);
     }
   };
 
-  const FilteredMeals = meals.filter((meal) =>
-    meal.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Here when we have to do search on clicking button we do this
+  const handleSearch = () => {
+    if (searchQuery.trim() === "") {
+      setFilteredMeals(meals); // If search input is empty, show all meals
+      return;
+    }
+  
+    const results = meals.filter((meal) =>
+      meal.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredMeals(results);
+  };
+
+// Here If we want that when search querry is empty all the data shown automatically we do this
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredMeals(meals); // Reset meals when input is cleared
+    }
+  }, [searchQuery, meals]); // Watch for changes
 
   return (
     <>
@@ -91,7 +109,7 @@ const Snacks = () => {
             placeholder="Search Best Homemade food and snacks in your area"
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="search-button">Search</button>
+          <button className="search-button" onClick={handleSearch}>Search</button>
         </div>
       </section>
 
@@ -99,8 +117,8 @@ const Snacks = () => {
         <h1>Find The Best Homemade Snacks and Food</h1>
         <section className="snackssection">
           <div className="snacks-container">
-            {FilteredMeals.length > 0 ? (
-              FilteredMeals.map((meal) => <MealCard key={meal.id} meal={meal} />)
+            {filteredMeals.length > 0 ? (
+              filteredMeals.map((meal) => <MealCard key={meal.id} meal={meal} />)
             ) : (
               <p>Loading snacks...</p>
             )}
