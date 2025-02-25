@@ -93,6 +93,29 @@
     padding-top: 80px; /* Adjust if needed */
     
 }
+.cart {
+width: 100%;
+max-width: fit-content;
+  display: none; /* By default, hide the Cart */
+
+  padding: 8px 15px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 10px; /* Add spacing from buttons */
+  cursor: pointer;
+  text-align: center;
+  background-color: #007bff;
+}
+.carticon{
+  height: 25px ;
+  width: 25px ;
+}
+/* When on the Meal page, show the Cart */
+ .cart {
+  display: block;
+}
 
 
 
