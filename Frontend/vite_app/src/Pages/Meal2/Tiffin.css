@@ -1,0 +1,210 @@
+.tiffinmain{
+    margin-top: 70px;
+   
+background-color: #FFF7ED;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 25px;
+gap: 20px;
+padding-bottom: 40px;
+}
+.tiffinmain>h1{
+    padding-top: 10px; 
+width: 100%;
+max-width: fit-content;
+font-size: 35px;
+font-weight: bold;
+color: #333;
+}
+.bannerimg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.img{
+    width: 70%;
+    object-fit: cover; /* Ensures the image covers the div */   
+}
+
+.button {
+    position: absolute;
+    background-color: white;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+    padding: 8px 14px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px;
+    left: 265px;
+    top: 250px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(255, 102, 0, 0.3);
+}
+
+/* Hover Effect */
+.button:hover {
+    background-color: #ff6600;
+    color: white;
+    box-shadow: 0px 6px 12px rgba(255, 102, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Active State (Click Effect) */
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 6px rgba(255, 102, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button {
+        left: 50%;
+        top: 220px;
+        transform: translateX(-50%);
+        padding: 12px 18px;
+    }
+}
+
+.button2 {
+    position: absolute;
+    background: linear-gradient(45deg, #ff6600, #ff4500);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px;
+    left: 450px;
+    top: 250px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.4);
+}
+
+/* Hover Effect */
+.button2:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6600);
+    box-shadow: 0px 6px 12px rgba(255, 69, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Active State (Click Effect) */
+.button2:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 6px rgba(255, 69, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button2 {
+        left: 50%;
+        top: 220px;
+        transform: translateX(-50%);
+        padding: 14px 20px;
+    }
+}
+
+/*meal card*/
+.menu {
+  text-align: center;
+  padding: 20px;
+}
+.menu>h1{
+  font-size: 35px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tifincontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ensures proper wrapping */
+  gap: 40px;
+  padding: 20px;
+  width: 100%; /* Ensures full width */
+  justify-content: center; /* Centers items properly */
+}
+
+.meal-card {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.meal-card:hover {
+  transform: scale(1.05);
+}
+
+.meal-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.meal-info {
+  padding: 15px;
+}
+
+.meal-info h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.meal-type {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.veg {
+  background-color: #e6ffe6;
+  color: #28a745;
+}
+
+.non-veg {
+  background-color: #ffe6e6;
+  color: #dc3545;
+}
+
+.reviews {
+  font-size: 14px;
+  color: #777;
+}
+
+.details {
+  font-size: 14px;
+  color: #555;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.subscribe-btn {
+  background: #ff7f00;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+  background: #e06b00;
+}
+
