@@ -8,6 +8,9 @@ const Tiffin=()=>{
             <img src="https://res.cloudinary.com/doqzxuxb1/image/upload/v1740400809/Cloudinary%20images/mgmqqs6gr61wuubej3te.png" alt=""  className="img"/>
             <button className="button">hello world</button>
         </div>
+        <div className="menu section">
+            <h1>Hello world</h1>
+        </div>
     </main>
     
     

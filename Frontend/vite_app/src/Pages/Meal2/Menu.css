@@ -1,0 +1,62 @@
+.menu-container {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+}
+
+.menu-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.menu-items {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    min-width: 200px;
+}
+
+.menu-card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.menu-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.rating {
+    font-size: 18px;
+    color: #ffa500;
+    font-weight: bold;
+}
+.pr{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.pr>p{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: fit-content;
+}
