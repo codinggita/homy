@@ -89,3 +89,104 @@
   font-size: 14px;
   color: #9ca3af;
 }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .maincontainer {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+  }
+
+  .social {
+      gap: 30px;
+  }
+
+  .footer {
+      padding: 40px 40px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .maincontainer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+  }
+
+  .footer-section1 p {
+      width: 100%;
+  }
+
+  .social {
+      justify-content: center;
+  }
+
+  .footer-section2 ul, 
+  .footer-section3 ul {
+      align-items: center;
+  }
+
+  /* Contact Us Section */
+  .footer-section3 {
+      align-items: center;
+      text-align: center;
+  }
+
+  .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .contact li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .icons {
+      width: 18px;
+      height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+      padding: 30px 20px;
+  }
+
+  .footer-bottom {
+      font-size: 12px;
+  }
+
+  .social {
+      flex-direction: row;
+      gap: 15px;
+  }
+
+  .footer-section {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+  }
+
+  /* Contact Us Section (Small Screens) */
+  .contact {
+      gap: 5px;
+  }
+
+  .contact li {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .icons {
+      width: 16px;
+      height: 16px;
+  }
+}

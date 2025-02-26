@@ -13,7 +13,8 @@
 .menu-items {
     display: flex;
     gap: 15px;
-    overflow-x: auto;
+    flex-wrap: wrap;  /* Allows items to wrap to the next line */
+    justify-content: center; /* Centers items when wrapped */
     padding-bottom: 15px;
 }
 
@@ -22,7 +23,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    width: calc(25% - 15px); /* Four cards per row on large screens */
     min-width: 200px;
+    text-align: center;
 }
 
 .menu-card img {
@@ -37,6 +40,20 @@
     margin: 10px 0;
 }
 
+.pr {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.pr > p {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: fit-content;
+}
+
 .price {
     font-size: 20px;
     color: red;
@@ -48,15 +65,37 @@
     color: #ffa500;
     font-weight: bold;
 }
-.pr{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 5px;
-    padding-right: 10px;
-}
-.pr>p{
-    display: flex;
-    align-items: center;
+
+.subscribe-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
     width: 100%;
-    max-width: fit-content;
+}
+
+.subscribe-btn:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .menu-card {
+        width: calc(50% - 15px); /* Two cards per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-items {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .menu-card {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 350px; /* Limit card width */
+    }
 }
