@@ -5,6 +5,7 @@
     align-items: center;
     background: linear-gradient(to right,#FFF7ED,white);
   padding-bottom: 60px;
+  padding-top: 100px;
 }
 .Header>h1{
     text-align: center;
@@ -241,5 +242,17 @@
 
   .mealcard img {
       height: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .snacks-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .snacks-container .mealcard {
+      width: 100%;
+      max-width: 350px; /* Adjust width as needed */
   }
 }
