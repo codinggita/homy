@@ -8,13 +8,15 @@ import StarRating from '../../Components/Stars.jsx'
 
 const MealCard = ({ meal }) => {
   const navigate = useNavigate();
-  const [count, setCount] = useState(1);
 
-  const increaseCount = () => setCount(count + 1);
-  const decreaseCount = () => setCount(count > 1 ? count - 1 : 1);
+  const handleNavigate = () => {
+    // Convert meal name to a URL-friendly format
+    const mealNameSlug = encodeURIComponent(meal.name.toLowerCase().replace(/\s+/g, "-"));
+    navigate(`/meal/${mealNameSlug}`); // Navigate using the meal name
+  };
 
   return (
-    <div className="mealcard">
+    <div className="mealcard" onClick={handleNavigate} style={{ cursor: "pointer" }}>
       <img
         src={
           meal.image ||
@@ -32,23 +34,25 @@ const MealCard = ({ meal }) => {
         <div className="Pricing">
           <span>₹{meal.price}</span>
           <div className="Quantity">
-            <button onClick={decreaseCount} className="sub">
+            <button onClick={(e) => e.stopPropagation()} className="sub">
               −
             </button>
-            <span>{count}</span>
-            <button onClick={increaseCount} className="add">
+            <span>1</span>
+            <button onClick={(e) => e.stopPropagation()} className="add">
               +
             </button>
           </div>
         </div>
         <div className="buy">
-          <button onClick={() => navigate("/")}>Buy Now</button>
-          <button onClick={() => navigate("/")}>Add To Cart</button>
+          <button onClick={(e) => e.stopPropagation()}>Buy Now</button>
+          <button onClick={(e) => e.stopPropagation()}>Add To Cart</button>
         </div>
       </div>
     </div>
   );
 };
+
+
 
 
 
