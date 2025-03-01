@@ -144,6 +144,14 @@ const MealDetails = () => {
     const [meal, setMeal] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [selectedWeight, setSelectedWeight] = useState("500gm");
+    const [price, setPrice] = useState(0);
+
+    useEffect(() => {
+        if (meal) {
+            setPrice(meal.prices[selectedWeight]);
+        }
+    }, [selectedWeight, meal]);
 
     useEffect(() => {
         const fetchMealDetails = async () => {
@@ -168,26 +176,9 @@ const MealDetails = () => {
     
     
   const [quantity, setQuantity] = useState(1);
-    const [selectedWeight, setSelectedWeight] = useState("250gm");
-    const [price, setPrice] = useState(100); // Base price for 250gm
-
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => quantity > 1 && setQuantity(quantity - 1);
 
-
-  const handleWeightChange = (event) => {
-    const weight = event.target.value;
-    setSelectedWeight(weight);
-
-    // Update price based on selected weight
-    if (weight === "250gm") {
-      setPrice(100);
-    } else if (weight === "500gm") {
-      setPrice(180);
-    } else if (weight === "1kg") {
-      setPrice(350);
-    }
-  };
 
 
     if (loading) return <p>Loading meal details...</p>;
@@ -217,7 +208,7 @@ const MealDetails = () => {
             <p className="reviews">342 reviews | 1250+ orders</p>
   
             <div className="price">
-              <span className="current-price">Price: ₹{meal.price}</span>
+              <span className="current-price"><strong>Price:</strong> {price}/{selectedWeight}</span>
               {/* <span className="original-price">$12.99</span>
               <span className="discount">23% OFF</span> */}
             </div>
@@ -242,11 +233,11 @@ const MealDetails = () => {
             </div>
             <div className="weight">
             <label>Select Weight: </label>
-        <select value={selectedWeight} onChange={handleWeightChange}>
-          <option value="250gm">250gm</option>
-          <option value="500gm">500gm</option>
-          <option value="1kg">1kg</option>
-        </select>
+            <select onChange={(e) => setSelectedWeight(e.target.value)} value={selectedWeight}>
+                <option value="250gm">250gm</option>
+                <option value="500gm">500gm</option>
+                <option value="1kg">1kg</option>
+            </select>
             </div>
             </div>
             <button className="add-to-cart">
