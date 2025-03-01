@@ -8,7 +8,7 @@ import HostelList from "./Pages/Hostel/Hostelmain.jsx";
 import Community from "./Pages/Community.jsx";
 import Mealmain from "./Pages/Meal2/Mealmain.jsx";
 import Login from "./Components/LogIn.jsx";
-import ProductPage from './Pages/Subpages/Detail.jsx'; // Import Meal Detail Page
+import MealDetails from './Pages/Subpages/Detail.jsx'; // Import Meal Detail Page
 
 const App = () => {
   return (
@@ -18,8 +18,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/hostel" element={<HostelList />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/meal" element={<Mealmain />} />
-          <Route path="/meal/:mealName" element={<ProductPage  />} /> {/* Meal Detail Page */}
+          <Route path="/meals" element={<Mealmain />} />
+          <Route path="/meals/:id" element={<MealDetails />} /> {/* Meal Detail Page */}
           <Route path="/login" element={<Login />} />
         </Route>
       </Routes>

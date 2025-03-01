@@ -17,14 +17,14 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           {/* Left Section - Logo */}
-          <div className="logo">Homy</div>
+          <div className="logo"><img src="https://res.cloudinary.com/doqzxuxb1/image/upload/v1740719490/Cloudinary%20images/fskjyvdzsk1tmmkue1mg.jpg" alt="" /></div>
 
           {/* Middle Section - Navigation Menu */}
           <ul className={menuOpen ? "nav-menu active" : "nav-menu"}>
             <li><Link to="/" className="nav-link">Home</Link></li>
             <li><Link to="/hostel" className="nav-link">Hostel</Link></li>
             <li><Link to="/community" className="nav-link">Community</Link></li>
-            <li><Link to="/meal" className="nav-link">Meal</Link></li>
+            <li><Link to="/meals" className="nav-link">Meal</Link></li>
           </ul>
           
 

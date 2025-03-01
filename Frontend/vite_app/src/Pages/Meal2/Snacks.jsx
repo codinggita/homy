@@ -8,20 +8,32 @@ import StarRating from '../../Components/Stars.jsx'
 
 const MealCard = ({ meal }) => {
   const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
 
   const handleNavigate = () => {
-    // Convert meal name to a URL-friendly format
-    const mealNameSlug = encodeURIComponent(meal.name.toLowerCase().replace(/\s+/g, "-"));
-    navigate(`/meal/${mealNameSlug}`); // Navigate using the meal name
+    console.log("Meal ID:", meal._id); // Debugging: Check if _id exists
+    if (meal._id) {
+        navigate(`/meals/${meal._id}`);
+        console.log('Moving to detail page')
+    } else {
+        console.error("Meal ID is undefined");
+    }
+};
+
+  const increaseQuantity = (e) => {
+    e.stopPropagation(); // Prevent navigation trigger
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decreaseQuantity = (e) => {
+    e.stopPropagation(); // Prevent navigation trigger
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
   };
 
   return (
     <div className="mealcard" onClick={handleNavigate} style={{ cursor: "pointer" }}>
       <img
-        src={
-          meal.image ||
-          "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png"
-        }
+        src={meal.image || "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png"}
         alt={meal.name}
         className="snackimg"
       />
@@ -34,13 +46,9 @@ const MealCard = ({ meal }) => {
         <div className="Pricing">
           <span>₹{meal.price}</span>
           <div className="Quantity">
-            <button onClick={(e) => e.stopPropagation()} className="sub">
-              −
-            </button>
-            <span>1</span>
-            <button onClick={(e) => e.stopPropagation()} className="add">
-              +
-            </button>
+            <button onClick={decreaseQuantity} className="sub">−</button>
+            <span>{quantity}</span>
+            <button onClick={increaseQuantity} className="add">+</button>
           </div>
         </div>
         <div className="buy">
@@ -51,8 +59,6 @@ const MealCard = ({ meal }) => {
     </div>
   );
 };
-
-
 
 
 

@@ -62,18 +62,49 @@ app.get('/meals', async (req, res) => {
 });
 
 
-app.get('/meals/:name',async(req,res)=>{
-    try{
-        const name=req.params.name;
-        const meals=await collection.findOne({name});
-        res.status(200).json(meals);
-    }catch(error){
-        res.status(500).json({error:"internal server not working"});
-    }
+// app.get('/meals/:id',async(req,res)=>{
+//     try{
+//         const name=req.params.id;
+//         console.log(name)
+//         const meals=await collection.findOne({name});
+//         res.status(200).json(meals);
+//     }catch(error){
+//         res.status(500).json({error:"internal server not working"});
+//     }
     
-})
+// })
+
+const { ObjectId } = require("mongodb");
+
+app.get('/meals/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+
+        // Validate ObjectId format
+        if (!ObjectId.isValid(id)) {
+            return res.status(400).json({ error: "Invalid ID format" });
+        }
+
+        const meal = await collection.findOne({ _id: new ObjectId(id) });//Here By Using this newobjectId(id) we can convert the id into the objectId.
+
+        if (!meal) {
+            return res.status(404).json({ error: "Meal not found by meal section" });
+        }
+
+        res.status(200).json(meal);
+    } catch (error) {
+        console.error("Internal Server Error:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+
+
+
+
 
 app.listen(PORT,()=>{
     console.log(`server is running on http://localhost:${PORT}`)
 });
+
 

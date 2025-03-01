@@ -164,7 +164,7 @@
       },
       {
         "name": "Green Leaf Hostel",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765633/Homy/greenhostel.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/kr5r41ouum8guafdexr8.png",
         "price": 4000,
         "description": "Affordable hostel with garden view and free breakfast.",
         "rating": 4.0,
@@ -175,7 +175,7 @@
       },
       {
         "name": "Royal Stay",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765633/Homy/royalstay.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/tuxunlz5g5pketrju6ky.png",
         "price": 9000,
         "description": "Premium hostel with a business lounge and fitness center.",
         "rating": 4.7,
@@ -191,7 +191,7 @@
     "hostels": [
       {
         "name": "Skyline Residency",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765634/Homy/skyline.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765632/Homy/hmhxfu2jhtw6srkodukl.png",
         "price": 7500,
         "description": "Luxurious hostel with rooftop lounge and WiFi.",
         "rating": 4.6,
@@ -202,7 +202,7 @@
       },
       {
         "name": "Maple Stay",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765635/Homy/maple.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/cnrg6pml6gtr2qsdsnes.png",
         "price": 6800,
         "description": "Comfortable hostel with study rooms and a gym.",
         "rating": 4.4,
@@ -213,7 +213,7 @@
       },
       {
         "name": "Sunview Hostel",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765635/Homy/sunview.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/tuxunlz5g5pketrju6ky.png",
         "price": 4500,
         "description": "Peaceful hostel with 24/7 security and study hall.",
         "rating": 4.1,
@@ -229,7 +229,7 @@
     "hostels": [
       {
         "name": "Elite Living",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765636/Homy/elite.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/tuxunlz5g5pketrju6ky.png",
         "price": 9800,
         "description": "Premium hostel with luxury amenities and 24/7 security.",
         "rating": 4.8,
@@ -240,7 +240,7 @@
       },
       {
         "name": "Sunrise PG",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765637/Homy/sunrise.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765632/Homy/hmhxfu2jhtw6srkodukl.png",
         "price": 4500,
         "description": "Affordable stay with home-cooked meals and laundry services.",
         "rating": 4.2,
@@ -251,7 +251,7 @@
       },
       {
         "name": "Emerald Hostel",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765637/Homy/emerald.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/cnrg6pml6gtr2qsdsnes.png",
         "price": 7000,
         "description": "Well-furnished hostel with game zone and library.",
         "rating": 4.5,
@@ -267,7 +267,7 @@
     "hostels": [
       {
         "name": "Urban Heights",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765639/Homy/urbanheights.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/kr5r41ouum8guafdexr8.png",
         "price": 15000,
         "description": "Ultra-luxury hostel with rooftop swimming pool and personal workspace.",
         "rating": 4.9,
@@ -278,7 +278,7 @@
       },
       {
         "name": "Grand Residency",
-        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765639/Homy/grandresidency.png",
+        "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/cnrg6pml6gtr2qsdsnes.png",
         "price": 12000,
         "description": "Luxury hostel with premium dining and rooftop garden.",
         "rating": 4.8,
@@ -299,7 +299,7 @@
     "quantity": 10,
     "category": "Snacks",
     "description": "A crispy, thin whole wheat snack infused with methi (fenugreek) for an authentic taste.",
-    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Methi-khakhra-234x300_nbiuvw.png",
+    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/tuxunlz5g5pketrju6ky.png",
     "ratings": [5, 4, 5, 4, 5]
   },
   {
@@ -308,7 +308,7 @@
     "quantity": 8,
     "category": "Snacks",
     "description": "A soft and flavorful Indian flatbread made with wheat flour, methi leaves, and spices.",
-    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png",
+    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/tuxunlz5g5pketrju6ky.png",
     "ratings": [5, 4, 4, 5, 4]
   },
   {
@@ -317,7 +317,7 @@
     "quantity": 6,
     "category": "Snacks",
     "description": "A combination of six different traditional Gujarati farsan snacks, perfect for any occasion.",
-    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/16_unhzfe.png",
+    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/kr5r41ouum8guafdexr8.png",
     "ratings": [5, 5, 5, 4, 5]
   },
   {
@@ -335,7 +335,7 @@
     "quantity": 10,
     "category": "Snacks",
     "description": "A crispy and flavorful Indian flatbread seasoned with a special blend of spices.",
-    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Chili-Garlic-Bhakari_am1iac.png",
+    "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739765631/Homy/cnrg6pml6gtr2qsdsnes.png",
     "ratings": [5, 4, 5, 5, 4]
   },
   {

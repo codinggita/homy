@@ -11,6 +11,7 @@
   align-items: center;
   z-index: 1000;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
 }
 
 /* Navbar Container */
@@ -30,12 +31,14 @@
   color: #007bff;
   max-width: fit-content;
 }
-
+.logo>img{
+  width: 80px;
+}
 /* Navigation Menu */
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 120px;
   text-align: center;
   justify-content: center;
 }
