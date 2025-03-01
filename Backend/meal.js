@@ -74,9 +74,10 @@ app.get('/meals', async (req, res) => {
     
 // })
 
-const { ObjectId } = require("mongodb");
 
-app.get('/meals/:id', async (req, res) => {
+const { ObjectId } = require("mongodb"); // Ensure ObjectId is imported
+
+app.get("/meals/:id", async (req, res) => {
     try {
         const id = req.params.id;
 
@@ -85,10 +86,23 @@ app.get('/meals/:id', async (req, res) => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
 
-        const meal = await collection.findOne({ _id: new ObjectId(id) });//Here By Using this newobjectId(id) we can convert the id into the objectId.
+        // Fetch meal by ID
+        const meal = await collection.findOne({ _id: new ObjectId(id) });
 
         if (!meal) {
-            return res.status(404).json({ error: "Meal not found by meal section" });
+            return res.status(404).json({ error: "Meal not found" });
+        }
+
+        // Ensure ratings array exists
+        if (meal.ratings && Array.isArray(meal.ratings) && meal.ratings.length > 0) {
+            // Calculate average rating
+            const averageRating =
+                meal.ratings.reduce((sum, rating) => sum + rating, 0) / meal.ratings.length;
+
+            // Add the average rating to the response
+            meal.averageRating = parseFloat(averageRating.toFixed(2)); // Keep 2 decimal places
+        } else {
+            meal.averageRating = 0; // Default value if no ratings exist
         }
 
         res.status(200).json(meal);
@@ -97,6 +111,7 @@ app.get('/meals/:id', async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 });
+
 
 // For finding the price base on the weight
 
