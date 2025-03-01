@@ -8,6 +8,14 @@ import StarRating from '../../Components/Stars.jsx'
 
 const MealCard = ({ meal }) => {
   const navigate = useNavigate();
+  const [selectedWeight, setSelectedWeight] = useState("500gm");
+  const [price, setPrice] = useState(meal.prices["500gm"]); 
+
+  useEffect(() => {
+    setPrice(meal.prices[selectedWeight]);
+}, [selectedWeight, meal]);
+
+
   const [quantity, setQuantity] = useState(1);
 
   const handleNavigate = () => {
@@ -44,7 +52,15 @@ const MealCard = ({ meal }) => {
         <StarRating rating={parseFloat(meal.avgRating)} />
 
         <div className="Pricing">
-          <span>₹{meal.price}</span>
+          <span><strong>Price:</strong> {price}/{selectedWeight}</span>
+
+          {/* <select onChange={(e) => setSelectedWeight(e.target.value)} value={selectedWeight}>
+                <option value="250gm">250gm</option>
+                <option value="500gm">500gm</option>
+                <option value="1kg">1kg</option>
+            </select> */}
+
+
           <div className="Quantity">
             <button onClick={decreaseQuantity} className="sub">−</button>
             <span>{quantity}</span>

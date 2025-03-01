@@ -98,9 +98,45 @@ app.get('/meals/:id', async (req, res) => {
     }
 });
 
+// For finding the price base on the weight
 
+app.get("/meals/:id/price", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { weight = "500gm" } = req.query; // Default weight 500gm
 
+        console.log("📌 Fetching Price for Meal:", id, "Weight:", weight);
 
+        // Validate ObjectId
+        if (!ObjectId.isValid(id)) {
+            return res.status(400).json({ error: "Invalid product ID" });
+        }
+
+        // Find meal in the database
+        const meal = await collection.findOne({ _id: new ObjectId(id) });
+
+        if (!meal) {
+            return res.status(404).json({ error: "Meal not found" });
+        }
+
+        // Ensure prices exist
+        if (!meal.prices || typeof meal.prices !== "object") {
+            return res.status(500).json({ error: "Meal price data is missing" });
+        }
+
+        // Get price for the selected weight
+        const price = meal.prices[weight];
+
+        if (price === undefined) {
+            return res.status(400).json({ error: "Invalid weight selected" });
+        }
+
+        res.json({ price, weight });
+    } catch (error) {
+        console.error("❌ Error Fetching Price:", error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
 
 
 app.listen(PORT,()=>{
