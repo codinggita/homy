@@ -339,12 +339,95 @@
     "ratings": [5, 4, 5, 5, 4]
   },
   {
-    "name": "Nylon Sec",
+    "name": "Nylon Sev",
     "price": "80/500gm",
     "quantity": "500gm",
     "category": "Snacks",
     "description": "A crispy and flavorful Indian flatbread seasoned with a special blend of spices.",
     "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/Mix-Farshan-251x300_pyw19f.png",
     "ratings": [5, 5, 4, 4, 5]
+  }
+]
+
+
+
+[
+  {
+      "name": "SP Methi Khakhra",
+      "prices": {
+          "250gm": 80,
+          "500gm": 150,
+          "1kg": 290
+      },
+      "quantity": 20,
+      "category": "Snacks",
+      "description": "Crispy and flavorful Methi Khakhra made with wheat flour and fenugreek.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Methi-khakhra-234x300_nbiuvw.png",
+      "ratings": [5, 4, 4, 5, 5]
+  },
+  {
+      "name": "Methi Thepla",
+      "prices": {
+          "250gm": 90,
+          "500gm": 170,
+          "1kg": 320
+      },
+      "quantity": 15,
+      "category": "Snacks",
+      "description": "Soft and spicy Methi Thepla, a Gujarati delicacy perfect for travel and breakfast.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137496/Thepla-231x300_edl9q5.png",
+      "ratings": [4, 5, 4, 4, 5]
+  },
+  {
+      "name": "Farsan Combo of 6",
+      "prices": {
+          "250gm": 180,
+          "500gm": 340,
+          "1kg": 650
+      },
+      "quantity": 10,
+      "category": "Snacks",
+      "description": "A special combo pack of six different farsan varieties for ultimate snacking.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/16_unhzfe.png",
+      "ratings": [5, 5, 4, 5, 5]
+  },
+  {
+      "name": "Mango Pickle",
+      "prices": {
+          "250gm": 90,
+          "500gm": 170,
+          "1kg": 320
+      },
+      "quantity": 12,
+      "category": "Pickles",
+      "description": "A spicy and tangy traditional mango pickle made with the perfect blend of spices.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137497/Sweet-mango-210x300_gp6ywr.png",
+      "ratings": [4, 5, 4, 4, 5]
+  },
+  {
+      "name": "Masala Bhakri",
+      "prices": {
+          "250gm": 85,
+          "500gm": 160,
+          "1kg": 300
+      },
+      "quantity": 18,
+      "category": "Snacks",
+      "description": "Crispy and spicy Masala Bhakri, a healthy and tasty tea-time snack.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137494/Chili-Garlic-Bhakari_am1iac.png",
+      "ratings": [4, 4, 5, 4, 4]
+  },
+  {
+      "name": "Sev",
+      "prices": {
+          "250gm": 70,
+          "500gm": 130,
+          "1kg": 250
+      },
+      "quantity": 25,
+      "category": "Snacks",
+      "description": "Thin and crispy Nylon Sev, perfect for garnishing chaats and other Indian snacks.",
+      "image": "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740137495/Mix-Farshan-251x300_pyw19f.png",
+      "ratings": [5, 5, 4, 4, 5]
   }
 ]
