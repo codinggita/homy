@@ -5,12 +5,14 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { FiMenu, FiX } from "react-icons/fi";
 import {useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import "./Nav.css";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const cartItems = useSelector((state) => state.cart.items);
 
   return (
     <>
@@ -50,12 +52,14 @@ const Navbar = () => {
             )}
           </div>
 
-          {location.pathname === "/meal" && (
-        <div className="cart">
+          {/* {location.pathname === "/meals" && (
+
+         )} */}
+
+<div className="cart">
+          <Link to="/cart"><FaShoppingCart className="carticon"/>({cartItems.length})</Link> {/* ✅ Show item count */}
           
-          <FaShoppingCart className="carticon"/>
         </div>
-         )}
 
           {/* Mobile Menu Button */}
           <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>

@@ -135,7 +135,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 import "./Detail.css"; // External CSS file
-
+import StarRating from '../../Components/Stars.jsx'
 
 
 
@@ -146,6 +146,7 @@ const MealDetails = () => {
     const [error, setError] = useState(null);
     const [selectedWeight, setSelectedWeight] = useState("500gm");
     const [price, setPrice] = useState(0);
+    const [avg,setavg]=useState(0);
 
     useEffect(() => {
         if (meal) {
@@ -163,6 +164,16 @@ const MealDetails = () => {
                 }
                 const data = await response.json();
                 console.log("Fetched meal details:", data); // Debugging
+
+                let arr=data.ratings
+                let temp=0;
+                for(let i=0;i<arr.length;i++){
+                    temp+=arr[i]
+                }
+                let rating=(temp/arr.length).toFixed(1)
+                console.log(rating);
+                setavg(rating);
+                
                 setMeal(data);
             } catch (err) {
                 setError(err.message);
@@ -174,6 +185,7 @@ const MealDetails = () => {
         fetchMealDetails();
     }, [id]);
     
+
     
   const [quantity, setQuantity] = useState(1);
   const increaseQuantity = () => setQuantity(quantity + 1);
@@ -221,7 +233,7 @@ const MealDetails = () => {
             </div>
   
             <div className="rating">
-              <FaStar className="star-icon" /> <span>4.8</span>
+              <FaStar className="star-icon" /> <span>{avg}</span>
             </div>
   
            

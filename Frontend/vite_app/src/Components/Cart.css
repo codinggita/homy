@@ -1,0 +1,77 @@
+/* Cart Container */
+.cart-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Empty Cart Message */
+  .empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+  }
+  
+  /* Individual Cart Item */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Cart Item Image */
+  .cart-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Cart Details */
+  .cart-details {
+    flex-grow: 1;
+  }
+  
+  /* Quantity Section */
+  .cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Quantity Buttons */
+  .quantity-btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .quantity-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Remove Button */
+  .remove-btn {
+    margin-left: 15px;
+    padding: 8px 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+  
