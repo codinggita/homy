@@ -98,9 +98,6 @@ const MealCard = ({ meal }) => {
 };
 
 
-
-
-
 const Snacks = () => {
   const [meals, setMeals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
