@@ -4,19 +4,20 @@ import { FaLocationDot } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import StarRating from '../../Components/Stars.jsx'
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Components/cartSlice.jsx";
 
 const MealCard = ({ meal }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Initialize Redux dispatch
+
   const [selectedWeight, setSelectedWeight] = useState("500gm");
   const [price, setPrice] = useState(meal.prices["500gm"]); 
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     setPrice(meal.prices[selectedWeight]);
 }, [selectedWeight, meal]);
-
-
-  const [quantity, setQuantity] = useState(1);
 
   const handleNavigate = () => {
     console.log("Meal ID:", meal._id); // Debugging: Check if _id exists
@@ -37,6 +38,24 @@ const MealCard = ({ meal }) => {
     e.stopPropagation(); // Prevent navigation trigger
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
   };
+
+
+    // ✅ Handle Add to Cart with Redux
+    const handleAddToCart = (e) => {
+      e.stopPropagation(); // Prevent navigation trigger
+      console.log("Add to Cart Clicked!", meal,meal._id); // ✅ Check if meal data is correct
+    
+      dispatch(
+        addToCart({
+          id: meal._id,
+          name: meal.name,
+          image: meal.image,
+          weight: selectedWeight,
+          price: price,
+          quantity: quantity,
+        })
+      );
+    };
 
   return (
     <div className="mealcard" onClick={handleNavigate} style={{ cursor: "pointer" }}>
@@ -67,9 +86,11 @@ const MealCard = ({ meal }) => {
             <button onClick={increaseQuantity} className="add">+</button>
           </div>
         </div>
+
+
         <div className="buy">
           <button onClick={(e) => e.stopPropagation()}>Buy Now</button>
-          <button onClick={(e) => e.stopPropagation()}>Add To Cart</button>
+          <button onClick={handleAddToCart}>Add To Cart</button>
         </div>
       </div>
     </div>

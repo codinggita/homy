@@ -39,7 +39,7 @@ const AccommodationAndFood = () => {
       <div className="card">
         <img src={image} alt={title} className="card-image" />
         <h3 className="card-title">{title}</h3>
-        <button className="card-button" onClick={() => navigate("/meal")}>
+        <button className="card-button" onClick={() => navigate("/meals")}>
           View More
         </button>
       </div>
