@@ -18,7 +18,7 @@ app.use(cors({
 
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://jatinrajwani19:Jkagency2024@cluster0.bwp2q.mongodb.net/';
+const mongoURI = process.env.MONGODB_URI;
 const dbName = 'hostel_service';
 let db;
 
@@ -188,6 +188,83 @@ const authenticateToken = (req, res, next) => {
 
 
 
+
+
+  // Protected route example
+  app.get('/api/profile', authenticateToken, async (req, res) => {
+    try {
+        console.log('🔍 Extracted User ID:', req.user.userId);
+
+        // Convert userId to ObjectId
+        const userId = new ObjectId(req.user.userId);
+
+        // Find user in the database, excluding password
+        const user = await db.collection('users').findOne(
+            { _id: userId },
+            { projection: { password: 0 } }
+        );
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.json({ user });
+    } catch (error) {
+        console.error('❌ Profile error:', error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
+
+
+
+  // Update user profile
+app.put('/api/profile', authenticateToken, async (req, res) => {
+    try {
+        const { username, bio, removeField } = req.body;
+
+        // Fields to update
+        const updates = {};
+        if (username) updates.username = username;
+        if (bio) updates.bio = bio;
+
+        // Fields to delete
+        const deletions = {};
+        if (removeField) deletions[removeField] = "";
+
+        // MongoDB update query
+        const updateQuery = {};
+        if (Object.keys(updates).length > 0) updateQuery.$set = updates;
+        if (Object.keys(deletions).length > 0) updateQuery.$unset = deletions; // Delete fields
+
+        // Ensure there's something to update
+        if (Object.keys(updateQuery).length === 0) {
+            return res.status(400).json({ message: "No valid fields to update or delete" });
+        }
+
+        // Update user in database
+        const result = await db.collection('users').updateOne(
+            { _id: new ObjectId(req.user.userId) },
+            updateQuery
+        );
+
+        if (result.matchedCount === 0) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.json({ message: "Profile updated successfully" });
+    } catch (error) {
+        console.error("❌ Profile update error:", error);
+        res.status(500).json({ message: "Server error", error: error.message });
+    }
+});
+
+
+  
+
+  app.post('/api/logout', (req, res) => {
+    res.clearCookie('jwt');
+    res.json({ message: 'Logged out successfully' });
+  });
 
 
   const PORT = process.env.PORT || 5500;
