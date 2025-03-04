@@ -18,7 +18,7 @@ app.use(cors({
 
 
 // MongoDB Connection
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = 'mongodb+srv://jatinrajwani19:Jkagency2024@cluster0.bwp2q.mongodb.net/';
 const dbName = 'hostel_service';
 let db;
 
