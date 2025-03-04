@@ -14,6 +14,7 @@ const Navbar = () => {
   const location = useLocation();
   const cartItems = useSelector((state) => state.cart.items);
 
+  
   return (
     <>
       <nav className="navbar">
@@ -36,8 +37,10 @@ const Navbar = () => {
           <div className="auth-buttons">
             {isAuthenticated && (
               <p className="user-welcome">Welcome, {user.name}</p>
+              
             )}
-
+            
+             {/* {console.log(user)} */}
             {isAuthenticated ? (
               <button 
                 onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} 
@@ -49,6 +52,7 @@ const Navbar = () => {
               <button onClick={loginWithRedirect} className="login-button">
                 Log In
               </button>
+              
             )}
           </div>
 

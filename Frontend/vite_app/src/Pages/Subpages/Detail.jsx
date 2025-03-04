@@ -135,7 +135,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 import "./Detail.css"; // External CSS file
-import StarRating from '../../Components/Stars.jsx'
+// import StarRating from '../../Components/Stars.jsx'
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Components/cartSlice.jsx";
 
 
 
@@ -147,6 +149,7 @@ const MealDetails = () => {
     const [selectedWeight, setSelectedWeight] = useState("500gm");
     const [price, setPrice] = useState(0);
     const [avg,setavg]=useState(0);
+    const dispatch = useDispatch(); // Initialize Redux dispatch
 
     useEffect(() => {
         if (meal) {
@@ -191,6 +194,24 @@ const MealDetails = () => {
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => quantity > 1 && setQuantity(quantity - 1);
 
+
+      // ✅ Handle Add to Cart with Redux
+      const handleAddToCart = (e) => {
+        e.stopPropagation(); // Prevent navigation trigger
+        console.log("Add to Cart Clicked!", meal,meal._id); // ✅ Check if meal data is correct
+      
+        dispatch(
+          addToCart({
+            id: meal._id,
+            name: meal.name,
+            image: meal.image,
+            weight: selectedWeight,
+            price: price,
+            quantity: quantity,
+          })
+        );
+      };
+  
 
 
     if (loading) return <p>Loading meal details...</p>;
@@ -252,7 +273,7 @@ const MealDetails = () => {
             </select>
             </div>
             </div>
-            <button className="add-to-cart">
+            <button className="add-to-cart" onClick={handleAddToCart}>
               <FaShoppingCart className="cartd" /> Add to Cart
             </button>
             <button className="add-to-cart">
