@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FiMenu, FiX } from "react-icons/fi";
-import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import "./Nav.css";
@@ -14,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
   const cartItems = useSelector((state) => state.cart.items);
 
-  
+
   return (
     <>
       <nav className="navbar">
@@ -29,18 +29,20 @@ const Navbar = () => {
             <li><Link to="/community" className="nav-link">Community</Link></li>
             <li><Link to="/meals" className="nav-link">Meal</Link></li>
           </ul>
-          
+
 
 
 
           {/* Right Section - Auth Buttons */}
           <div className="auth-buttons">
-            {isAuthenticated && (
+            <button className="login-button"><Link to="/mainlogin" className="nav-link"> Login</Link></button>
+
+
+            {/* {isAuthenticated && (
               <p className="user-welcome">Welcome, {user.name}</p>
               
             )}
             
-             {/* {console.log(user)} */}
             {isAuthenticated ? (
               <button 
                 onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} 
@@ -53,17 +55,14 @@ const Navbar = () => {
                 Log In
               </button>
               
-            )}
+            )} */}
           </div>
 
-          {/* {location.pathname === "/meals" && (
 
-         )} */}
+          <div className="cart">
+            <Link to="/cart"><FaShoppingCart className="carticon" />({cartItems.length})</Link> {/* ✅ Show item count */}
 
-<div className="cart">
-          <Link to="/cart"><FaShoppingCart className="carticon"/>({cartItems.length})</Link> {/* ✅ Show item count */}
-          
-        </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
@@ -71,7 +70,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      
+
       <Outlet />
     </>
   );
