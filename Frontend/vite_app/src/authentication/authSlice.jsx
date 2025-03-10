@@ -6,6 +6,7 @@ const initialState = {
   isAuthenticated: !!localStorage.getItem("token"),       // Check if token exists
 };
 
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -18,6 +19,7 @@ const authSlice = createSlice({
       // Save token & user to localStorage
       localStorage.setItem("token", action.payload.token);
       localStorage.setItem("user", JSON.stringify(action.payload.user));
+      
     },
 
     logoutUser: (state) => {
@@ -28,7 +30,9 @@ const authSlice = createSlice({
       // Remove token & user from localStorage
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-    }, 
+    },
+    
+    
 
   },
 });

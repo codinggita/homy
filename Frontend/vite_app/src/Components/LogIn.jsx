@@ -1,13 +1,15 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
+
 import "./Login.css"
-const Login=()=>{
+const MainLogin=()=>{
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+    
     const navigate = useNavigate();
 
     const handleSearch=()=>{
-        navigate('/hostel')
+        navigate('/login')
     };
 
     return(<>
@@ -19,7 +21,7 @@ const Login=()=>{
               
             )}
             
-             {/* {console.log(user)} */}
+         
             {isAuthenticated ? (
               <button 
                 onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} 
@@ -45,4 +47,4 @@ const Login=()=>{
 
     </>)
 };
-export default Login;
+export default MainLogin;

@@ -8,11 +8,15 @@ import Home from "./Pages/Home/Home.jsx";
 import HostelList from "./Pages/Hostel/Hostelmain.jsx";
 import Community from "./Pages/Community.jsx";
 import Mealmain from "./Pages/Meal2/Mealmain.jsx";
-import Login from "./Components/LogIn.jsx";
+import MainLogin from "./Components/LogIn.jsx";
 import MealDetails from './Pages/Subpages/Detail.jsx'; // Import Meal Detail Page
 
 import store from "./Components/store.jsx";
 import Cart from "./Components/cart.jsx"
+
+import Register from "./authentication/Register.jsx";
+import Profile from "./authentication/Profile.jsx";
+import Login from "./authentication/authLogin.jsx";
 
 const App = () => {
   return (
@@ -25,8 +29,11 @@ const App = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/meals" element={<Mealmain />} />
           <Route path="/meals/:id" element={<MealDetails />} /> {/* Meal Detail Page */}
-          <Route path="/login" element={<Login />} />
+          <Route path="/mainlogin" element={<MainLogin />} />
           <Route path="/cart" element={<Cart />} /> {/* Add Cart Route */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

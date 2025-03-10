@@ -35,7 +35,7 @@ const Navbar = () => {
 
           {/* Right Section - Auth Buttons */}
           <div className="auth-buttons">
-            <button className="login-button"><Link to="/login" className="nav-link"> Login</Link></button>
+            <button className="login-button"><Link to="/mainlogin" className="nav-link"> Login</Link></button>
 
 
             {/* {isAuthenticated && (
