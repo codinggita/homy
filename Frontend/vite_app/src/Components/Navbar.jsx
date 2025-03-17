@@ -1,18 +1,28 @@
 
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../authentication/authSlice.jsx";
 import "./Nav.css";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
   const cartItems = useSelector((state) => state.cart.items);
+
+  const dispatch = useDispatch();
+  const user1 = useSelector((state) => state.auth.user); // Get user from Redux
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/");
+  };
 
 
   return (
@@ -33,30 +43,42 @@ const Navbar = () => {
 
 
 
-          {/* Right Section - Auth Buttons */}
+          {/*By Jwt Token authentrication*/}
           <div className="auth-buttons">
-            <button className="login-button"><Link to="/mainlogin" className="nav-link"> Login</Link></button>
+            {user1 || isAuthenticated ? (
+              <div className="profile-menu">
 
-
-            {/* {isAuthenticated && (
-              <p className="user-welcome">Welcome, {user.name}</p>
               
-            )}
-            
-            {isAuthenticated ? (
+                  <Link to="/profile">Profile</Link>
+
+                  {isAuthenticated ? (
+                    
               <button 
                 onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} 
                 className="logout-button"
-              >
+              > 
+              
                 Log Out
               </button>
             ) : (
-              <button onClick={loginWithRedirect} className="login-button">
-                Log In
+              
+              <button onClick={handleLogout } className="logout-button">
+                Log out
               </button>
               
-            )} */}
+            )}
+              
+              </div>
+            ) : (
+              <Link to="/mainlogin">Login</Link>
+            )}
           </div>
+
+
+          
+         
+          {/* By auth0 authentication */}
+           
 
 
           <div className="cart">
