@@ -1,7 +1,6 @@
 /* Main FAQ Section */
 .mainfaq {
-    width: 100%;
-    max-width: 900px;
+    width: 77%;
     padding: 10px 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     background-color: #f9f9f9;
