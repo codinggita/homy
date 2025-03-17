@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link} from "react-router-dom";
 import { loginUser } from "./authSlice.jsx";
 import "./Login.css"; // Import CSS file
 
@@ -56,6 +56,7 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <button><Link to="/register" className="nav-link">register</Link></button>
       </form>
     </div>
   );
