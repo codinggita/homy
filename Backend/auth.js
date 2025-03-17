@@ -255,6 +255,27 @@ app.put('/api/profile', authenticateToken, async (req, res) => {
     }
 });
 
+// Auth0 Login Route
+// **Login Route**
+app.post("/api/auth/login", async (req, res) => {
+  const { username, email, picture, sub } = req.body;
+
+  try {
+    const existingUser = await db.collection('users').findOne({ sub });
+
+    if (!existingUser) {
+      const newUser = { 
+        username, email, picture, sub };
+      await db.collection('users').insertOne(newUser);
+      return res.json({ message: "User stored successfully", user: newUser });
+    }
+
+    res.json({ message: "User already exists", user: existingUser });
+  } catch (error) {
+    console.error("Database error:", error); // Log error
+    res.status(500).json({ message: "Error saving user", error: error.message });
+  }
+});
 
   
 
