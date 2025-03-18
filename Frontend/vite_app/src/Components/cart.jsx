@@ -12,7 +12,7 @@ const Cart = () => {
     <div className="cart-container">
       <h2>Your Cart</h2>
       {cartItems.length === 0 ? (
-        <p className="empty-cart">Your cart is empty.</p>
+        <p className="empty-cart">Your cart is empty welcome to the cart</p>
       ) : (
         cartItems.map((item) => (
           <div key={`${item.id}-${item.weight}`} className="cart-item">
