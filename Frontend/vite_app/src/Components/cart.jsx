@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "./cartSlice.jsx";
 import "./Cart.css"; // Import external CSS file
@@ -7,6 +7,11 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   console.log("🛒 Cart Items in UI:", cartItems); // ✅ Debugging  
+
+ // Save cart to localStorage whenever it updates
+ useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cartItems));
+}, [cartItems]);
 
   return (
     <div className="cart-container">
