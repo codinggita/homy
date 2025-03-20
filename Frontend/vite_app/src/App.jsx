@@ -10,6 +10,7 @@ import Community from "./Pages/Community.jsx";
 import Mealmain from "./Pages/Meal2/Mealmain.jsx";
 import MainLogin from "./Components/LogIn.jsx";
 import MealDetails from './Pages/Subpages/Detail.jsx'; // Import Meal Detail Page
+import Tiffin_main from './Pages/Tifin detail page/tiffinmain.jsx'
 
 import store from "./Components/store.jsx";
 import Cart from "./Components/cart.jsx"
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/tiffin" element={<Tiffin_main />} />
         </Route>
       </Routes>
     </BrowserRouter>

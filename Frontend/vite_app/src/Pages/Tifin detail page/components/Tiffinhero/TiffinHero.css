@@ -1,0 +1,62 @@
+/* TiffinHero.css */
+
+.tiffin-hero {
+    position: relative;
+    background: linear-gradient(to right, #fff7ed, #ffedd5);
+    padding: 136px 16px;
+    text-align: center;
+  }
+  
+  .tiffin-content {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .tiffin-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a202c;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .tiffin-content .highlight {
+    color: #ea580c;
+  }
+  
+  .tiffin-content p {
+    margin-top: 16px;
+    font-size: 1.125rem;
+    color: #4a5568;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tiffin-features {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+    color: #ea580c;
+  }
+  
+  .wave-divider svg {
+    width: 100%;
+    height: 48px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
