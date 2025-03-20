@@ -10,20 +10,22 @@
     margin: 0 auto;
     padding: 64px 16px;
   }
-  
+  .meal-section{
+    padding-top: 45px;
+  }
   .section-header {
     text-align: center;
     margin-bottom: 48px;
   }
   
   .section-header h2 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     color: #1a202c;
   }
   
   .section-header p {
-    margin-top: 16px;
+    margin-top: 14px;
     color: #4a5568;
   }
   
