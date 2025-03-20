@@ -6,16 +6,38 @@
      align-items: center;
      gap: 30px;
 }
-.mainimg{
-    max-width: fit-content;
-}
+/* .mainimg{
+    max-width: 100%;
+} */
 .HostelSearch{
     display: flex;
     justify-content: center;
-
 }
 .Faqsection{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.mainimg {
+    position: relative;
+    width: 80%;
+    height: 400px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .image-slide {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .image-slide.active {
+    opacity: 1;
+  }
+  

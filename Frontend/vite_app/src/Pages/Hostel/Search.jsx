@@ -167,21 +167,22 @@
 // export default HostelList;
 
 
+
 import React, { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa"; // Import search icon
 import "./searchbar.css";
 
 const HostelList = () => {
   const [allHostels, setAllHostels] = useState([]);
   const [displayedHostels, setDisplayedHostels] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [recommendations, setRecommendations] = useState([]);
+  const [showRecommendations, setShowRecommendations] = useState(false);
 
   // Filters
   const [selectedLocality, setSelectedLocality] = useState("");
   const [selectedRent, setSelectedRent] = useState("");
   const [selectedOccupancy, setSelectedOccupancy] = useState("");
-
-  // Flag to track when search is triggered
-  const [searchTriggered, setSearchTriggered] = useState(false);
 
   useEffect(() => {
     fetchHostels();
@@ -201,6 +202,29 @@ const HostelList = () => {
     } catch (error) {
       console.error("Error fetching hostels:", error);
     }
+  };
+
+  // Live Recommendations
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      const filtered = allHostels.filter(
+        (hostel) =>
+          hostel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          hostel.area.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setRecommendations(filtered.slice(0, 5)); // Show top 5 recommendations
+      setShowRecommendations(true);
+    } else {
+      setRecommendations([]);
+      setShowRecommendations(false);
+    }
+  }, [searchQuery, allHostels]);
+
+  // Function to handle recommendation click
+  const handleRecommendationClick = (recommendation) => {
+    setSearchQuery(recommendation.name);
+    setShowRecommendations(false); // Hide recommendation list
+    handleSearch(); // Trigger search
   };
 
   // Function to filter hostels when search is triggered
@@ -229,94 +253,93 @@ const HostelList = () => {
     }
 
     setDisplayedHostels(filteredHostels);
-    setSearchTriggered(true);
+    setShowRecommendations(false); // Hide recommendations after search
   };
 
   return (
     <div className="container">
       <h2 className="title">Find The Best Hostels and PG's in Your Area.</h2>
 
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search by hostel name or area..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="search-bar"
-      />
+      {/* Search Bar with Icon and Reset Button */}
+  <div className="search-container-wrapper">
+  <div className="search-container">
+    <input
+      type="text"
+      placeholder="Search by hostel name or area..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      onClick={() => setShowRecommendations(searchQuery.trim() !== "")}
+      className="search-bar"
+    />
+    <FaSearch className="search-icon" onClick={handleSearch} />
+    
+    {showRecommendations && recommendations.length > 0 && (
+      <ul className="recommendation-list">
+        {recommendations.map((hostel, index) => (
+          <li key={index} onClick={() => handleRecommendationClick(hostel)}>
+            {hostel.name} - {hostel.area}
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+  
+  <button
+    onClick={() => {
+      setSelectedLocality("");
+      setSelectedRent("");
+      setSelectedOccupancy("");
+      setSearchQuery("");
+      setDisplayedHostels(allHostels.slice(-8).reverse());
+    }}
+    className="reset-btn"
+  >
+    Reset
+  </button>
+</div>
 
       {/* Filters Section */}
       <div className="filters">
-        {/* Locality Filter */}
-        <select value={selectedLocality} onChange={(e) => setSelectedLocality(e.target.value)} className="filter-select">
-          <option value="">Select Locality</option>
-          {[...new Set(allHostels.map((hostel) => hostel.area))].map((area, index) => (
-            <option key={index} value={area}>
-              {area}
-            </option>
-          ))}
-        </select>
+        <div className="filter-component">
+          <select value={selectedLocality} onChange={(e) => setSelectedLocality(e.target.value)} className="filter-select">
+            <option value="">Select Locality</option>
+            {[...new Set(allHostels.map((hostel) => hostel.area))].map((area, index) => (
+              <option key={index} value={area}>{area}</option>
+            ))}
+          </select>
 
-        {/* Rent Filter */}
-        <select value={selectedRent} onChange={(e) => setSelectedRent(e.target.value)} className="filter-select">
-          <option value="">Select Rent</option>
-          <option value="3000-5000">₹4000 - ₹5000</option>
-          <option value="5000-7000">₹5000 - ₹7000</option>
-          <option value="7000-10000">₹7000 - ₹10000</option>
-          <option value="10000-12000">₹10000 - ₹12000</option>
-          <option value="12000-15000">₹12000 - ₹15000</option>
-        </select>
+          <select value={selectedRent} onChange={(e) => setSelectedRent(e.target.value)} className="filter-select">
+            <option value="">Select Rent</option>
+            <option value="3000-5000">₹4000 - ₹5000</option>
+            <option value="5000-7000">₹5000 - ₹7000</option>
+            <option value="7000-10000">₹7000 - ₹10000</option>
+            <option value="10000-12000">₹10000 - ₹12000</option>
+            <option value="12000-15000">₹12000 - ₹15000</option>
+          </select>
 
-        {/* Occupancy Filter (1 to 10) */}
-        <select value={selectedOccupancy} onChange={(e) => setSelectedOccupancy(e.target.value)} className="filter-select">
-          <option value="">Select Occupancy</option>
-          {[...Array(10)].map((_, i) => (
-            <option key={i + 1} value={i + 1}>
-              {i + 1} People
-            </option>
-          ))}
-        </select>
-
-        {/* Search Button */}
-        <button onClick={handleSearch} className="search-btn">
-          Search
-        </button>
-
-        {/* Reset Filters Button */}
-        <button onClick={() => {
-          setSelectedLocality("");
-          setSelectedRent("");
-          setSelectedOccupancy("");
-          setSearchQuery("");
-          setDisplayedHostels(allHostels.slice(-8).reverse());
-          setSearchTriggered(false);
-        }} className="reset-btn">
-          Reset Filters
-        </button>
+          <select value={selectedOccupancy} onChange={(e) => setSelectedOccupancy(e.target.value)} className="filter-select">
+            <option value="">Select Occupancy</option>
+            {[...Array(10)].map((_, i) => (
+              <option key={i + 1} value={i + 1}>{i + 1} People</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Hostels Grid */}
       <div className="hostel-grid">
-        {searchTriggered && displayedHostels.length === 0 ? (
+        {displayedHostels.length === 0 ? (
           <p className="no-results">No hostels found.</p>
         ) : (
           displayedHostels.map((hostel, index) => (
             <div key={index} className="hostel-card">
-              <div>
-                <img src={hostel.image} alt={hostel.name} className="hostel-image" />
-              </div>
-              <div>
-                <h3>{hostel.name}</h3>
-                <p><strong>Location:</strong> {hostel.area}</p>
-                <p><strong>Price:</strong> ₹{hostel.price} per month</p>
-                <p><strong>Ratings:</strong> ⭐ {hostel.rating}</p>
-                <p><strong>Occupancy:</strong> {hostel.occupancy} people</p>
-                <div className="buttons">
-                  <button className="details-btn" onClick={() => alert(`Details for ${hostel.name}`)}>
-                    View Details
-                  </button>
-                </div>
-              </div>
+              <img src={hostel.image} alt={hostel.name} className="hostel-image" />
+              <h3>{hostel.name}</h3>
+              <p><strong>Location:</strong> {hostel.area}</p>
+              <p><strong>Price:</strong> ₹{hostel.price} per month</p>
+              <p><strong>Ratings:</strong> ⭐ {hostel.rating}</p>
+              <p><strong>Occupancy:</strong> {hostel.occupancy} people</p>
+              <button className="details-btn">View Details</button>
             </div>
           ))
         )}
@@ -326,4 +349,3 @@ const HostelList = () => {
 };
 
 export default HostelList;
-
