@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-require('dotenv').config();
+require('dotenv').config({path:'./auth.env'});
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(cors());
 
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://jatinrajwani19:Jkagency2024@cluster0.bwp2q.mongodb.net/';
+const mongoURI = process.env.MONGODB;
 const dbName = 'hostel_service';
 let db;
 
@@ -43,6 +43,8 @@ connectToMongoDB();
 // Environment variables (use dotenv in production)
 const JWT_SECRET = process.env.JWT_SECRET || 'defaultSecret';
 const JWT_EXPIRES_IN =process.env.JWT_EXPIRES_IN || '7d';
+console.log("JWT Secret Key is new:", JWT_SECRET);
+
 
 
 
@@ -137,6 +139,7 @@ app.post('/api/register', async (req, res) => {
   
       console.log('🛡️ JWT Secret:', JWT_SECRET);
       console.log('🔐 Token Generated:', token);
+    
   
       // Send token as HTTP-only cookie
       res.cookie('jwt', token, {
