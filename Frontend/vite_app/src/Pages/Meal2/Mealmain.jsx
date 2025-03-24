@@ -2,7 +2,7 @@ import React from "react";
 import './mealmain.css'
 import Snacks from './Snacks.jsx'
 import Tiffin from "./Tiffin.jsx";
-import Footer from "./Footer.jsx";
+import Footer from "../../Components/Footer/Footer.jsx";
 const Mealmain=()=>{
     return(<>
     <main className="mealmain">

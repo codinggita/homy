@@ -235,7 +235,7 @@ import FeatureSection from "./feature.jsx";
 import AccommodationAndFood from "./AccommodationAndFood.jsx"; // Import the new section
 import AboutUs from "./About.jsx"
 import CustomerReviews from './review.jsx'
-import Footer from "./Footer.jsx";
+import Footer from "../../Components/Footer/Footer.jsx";
 
 const Home = () => {
   return (
