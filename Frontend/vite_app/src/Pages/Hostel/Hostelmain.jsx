@@ -2,7 +2,7 @@ import React from "react";
 import "./Hostelmain.css"
 import HostelSearch from "./Search.jsx";
 import Faq from "./faqs.jsx";
-import Footer from '../Home/Footer.jsx'
+import Footer from '../../Components/Footer/Footer.jsx'
 const HostelList=()=>{
 
 
