@@ -1,143 +1,132 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-  }
-  
-  .pricing-section {
+}
+
+.pricing-section {
     padding: 60px 20px;
-  }
-  
-  .container-pricing {
+}
+
+.container-pricing {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-  }
-  
-  .subtitle {
+}
+
+.subtitle {
     margin-top: 3px;
     font-size: 1.2rem;
     color: #666;
-  }
-  
-  /* Pricing Grid */
-  .pricing-grid {
+}
+
+/* Pricing Grid */
+.pricing-grid {
     margin-top: 45px;
-    display: flex;
-    flex-direction: row;
-    gap: 32px; /* Equivalent to gap-8 (8 * 4px = 32px) */
-  }
-  
-  /* Pricing Card */
-  .pricing-card {
-    width: 100%;
-    background-color: white; /* bg-white */
-    border-radius: 12px; /* rounded-xl */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
-    overflow: hidden; /* Prevents content from overflowing */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    justify-content: center;
+}
+
+/* Pricing Card */
+.pricing-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  .pricing-card:hover {
-    transform: translateY(-5px); /* Slight lift effect */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
-  }
-  
-  .popular {
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.popular {
     border: 2px solid #ff6b00;
-  }
-  
-  .popular-badge {
+}
+
+.popular-badge {
     background-color: #ff6b00;
     color: white;
     padding: 10px 0;
     font-weight: bold;
-  }
-  
-  /* Card Content */
-  .card-content {
+}
+
+/* Card Content */
+.card-content {
     padding: 30px;
-  }
-  
-  .plan-name {
+}
+
+.plan-name {
     width: 100%;
     max-width: fit-content;
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-  }
+    margin-top: 0;
+}
 
-  .plan-name.{
-    margin-top: 0px;
-  }
-  .price {
-    width: 100%;
-    max-width: fit-content;
-    margin-top: 10px;
+.price {
+    margin-top: 5px;
     font-size: 2rem;
     font-weight: bold;
     color: #222;
-  }
+}
 
-  .amount{
-    width: 100%;
-    max-width: fit-content;
-  }
-  .duration{
-    width: 100%;
-    max-width: fit-content;
-  }
-  
-  .duration {
+.duration {
     font-size: 1rem;
     color: #666;
-  }
-  
-  /* Features List */
-  .features {
+}
+.amount{
+    width: 100%;
+    max-width: fit-content;
+}
+.duration{
+    width: 100%;
+    max-width: fit-content;
+}
+/* Features List */
+.features {
     width: 100%;
     max-width: fit-content;
     list-style: none;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0;
-  }
-  
-  .feature-item-pricing {
+}
+
+.feature-item-pricing {
+    width: 100%;
+    max-width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
     color: #555;
     margin: 10px 0;
-    width: 100%;
-    max-width: fit-content;
-  }
-  .feature-item-pricing>span{
-    width: 100%;
-    max-width: fit-content;
-  }
-  
-  .icon {
+}
+
+.icon {
     width: 20px;
     height: 20px;
     color: #ff6b00;
     margin-right: 8px;
-  }
-  
-  /* Subscribe Button */
-  .subscribe-btn {
+}
+
+/* Subscribe Button */
+.subscribe-btn {
     margin-top: 20px;
     padding: 12px 20px;
     font-size: 1rem;
@@ -148,23 +137,31 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .subscribe-btn:hover {
+}
+
+.subscribe-btn:hover {
     background-color: #e65c00;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
     .title {
-      font-size: 2rem;
+        font-size: 2.2rem;
     }
     .pricing-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    .pricing-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
     .pricing-card {
-        border-radius: 8px; /* Reduce border radius for smaller screens */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
-      }
-  }
-  
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+}
