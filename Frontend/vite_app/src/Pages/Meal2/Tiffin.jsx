@@ -1,11 +1,19 @@
-import React from "react";
+import {React} from "react";
+import {useNavigate } from "react-router-dom";
 import './Tiffin.css'
 import Menu from "./Menu";
+
+
 const Tiffin =()=>{
-
-
+const navigate=useNavigate();
+const handelclick=()=>{
+  navigate("/tiffin");
+};
 
     const MealCard = ({ image, name, type, reviews, details, price,mreview }) => {
+
+
+
         return (
           <div className="meal-card">
             <img src={image} alt={name} className="meal-image" />
@@ -15,7 +23,7 @@ const Tiffin =()=>{
               <p className="reviews"> {mreview}⭐ ({reviews} reviews) </p>
               <p className="details">{details}</p>
               <p className="price">₹{price}/meal</p>
-              <button className="subscribe-btn">Subscribe Now</button>
+              <button className="subscribe-btn" onClick={handelclick}>Subscribe Now</button>
             </div>
           </div>
         );
@@ -30,7 +38,9 @@ const Tiffin =()=>{
           reviews: "128",
           details: "4 Rotis, Dal, Rice, 2 Sabzi, Salad, Papad",
           price: "120",
-           mreview:"4.4"
+           mreview:"4.4",
+          path:'/tiffin' 
+
         },
         {
           image: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1740505768/img_qm9zkf.png",
@@ -77,7 +87,6 @@ const Tiffin =()=>{
       </div>
     </div>
      <Menu/>
-
 
 
     </main>

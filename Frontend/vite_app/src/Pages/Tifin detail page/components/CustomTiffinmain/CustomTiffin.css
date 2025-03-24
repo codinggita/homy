@@ -1,0 +1,291 @@
+/* General Styles */
+.custom-tiffin {
+  padding: 60px 0;
+  background-color: #FFF7ED;
+}
+
+.container-custom {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.title-section p {
+  margin-top: 10px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Grid Layout */
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card/Box Layout */
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  min-width: 350px;
+}
+.box>h3{
+  color: black;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Meal Type Selection */
+.meal-types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+  gap: 16px; /* Equivalent to `gap-4` in Tailwind (4 * 4px = 16px) */
+}
+
+.meal-button {
+  display: flex; /* Equivalent to `flex` */
+  align-items: center; /* Equivalent to `items-center` */
+  padding: 16px; /* Equivalent to `p-4` (4 * 4px = 16px) */
+  border: 1px solid #ccc; /* Default border */
+  border-radius: 8px; /* Equivalent to `rounded-lg` */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Equivalent to `transition-colors` */
+}
+
+.meal-button:hover {
+  border-color: #ea580c; /* Equivalent to `hover:border-orange-500` */
+  background-color: #fff7ed; /* Equivalent to `hover:bg-orange-50` */
+}
+
+.meal-button span {
+  margin-left: 8px;
+}
+
+/* Dishes Section */
+.dishes-section {
+  margin-top: 20px;
+}
+.dishes-section>h3{
+  color: black;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dish-item {
+  display: flex; /* Equivalent to `flex` */
+  align-items: center; /* Equivalent to `items-center` (Align items vertically) */
+  justify-content: space-between; /* Equivalent to `justify-between` (Spread items apart) */
+  padding: 12px; /* Equivalent to `p-3` (3 * 4px = 12px) */
+  border: 1px solid #ccc; /* Default border */
+  border-radius: 8px; /* Equivalent to `rounded-lg` */
+}
+
+.dish-item h4 {
+  width: 100%;
+  max-width: fit-content;
+  font-size: 16px;
+}
+
+.dish-item p {
+  width: 100%;
+  max-width: fit-content;
+  font-size: 14px;
+  color: #666;
+}
+
+.add-button {
+  width: 100%;
+  max-width: fit-content;
+  padding: 4px 12px; /* Equivalent to `py-1` (4px) and `px-3` (12px) */
+  border: 1px solid #ea580c; /* Equivalent to `border border-orange-500` */
+  color: #ea580c; /* Equivalent to `text-orange-500` */
+  background-color: transparent;
+  border-radius: 8px; /* Equivalent to `rounded-lg` */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Equivalent to `transition-colors` */
+
+}
+
+.add-button:hover {
+  background-color: #ea580c; /* Equivalent to `hover:bg-orange-500` */
+  color: white; /* Equivalent to `hover:text-white` */
+}
+
+/* Subscription & Delivery Options */
+.selection-box {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.selection-box select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.time-options {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.time-options button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Default border */
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.time-options button:hover {
+  border-color: #ea580c; /* Equivalent to `hover:border-orange-500` */
+  background-color: #fff7ed; /* Equivalent to `hover:bg-orange-50` */
+}
+
+/* Checkout Button */
+.checkout-button {
+  width: 100%;
+  padding: 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.checkout-button:hover {
+  background: #e68900;
+}
+
+/* Icon Styling */
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========== Responsive Design =========== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 90%;
+    min-width: auto;
+  }
+
+  .title-section h2 {
+    font-size: 24px;
+  }
+
+  .title-section p {
+    font-size: 14px;
+  }
+
+  .meal-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  .title-section h2 {
+    font-size: 22px;
+  }
+
+  .title-section p {
+    font-size: 13px;
+  }
+
+  .box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .meal-types {
+    grid-template-columns: 1fr; /* Switch to single column */
+
+  }
+
+  .meal-button {
+    padding: 12px;
+  }
+
+  .dish-item {
+    flex-direction: row; /* Stack items on top of each other */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px; /* Slightly reduce padding */
+  }
+  .dish-item>div{
+    width: 100%;
+    max-width: fit-content;
+  }
+  .dish-item h4 {
+    width: 100%;
+    max-width: fit-content;
+    font-size: 16px;
+  }
+  
+  .dish-item p {
+    width: 100%;
+    max-width: fit-content;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .add-button {
+    padding: 6px 14px; /* Slightly increase padding for better touch interaction */
+    font-size: 16px; /* Increase font size for better readability */
+  }
+
+  .time-options {
+    flex-direction: column;
+  }
+
+  .checkout-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+  
