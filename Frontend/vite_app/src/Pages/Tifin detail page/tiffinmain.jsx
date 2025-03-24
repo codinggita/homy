@@ -3,6 +3,7 @@ import TiffinHero from "./components/Tiffinhero/Tiffin_Hero.jsx";
 import MealPlan from "./components/MealPlan/MealPlan.jsx";
 import CustomTiffin from "./components/CustomTiffinmain/Custom.jsx";
 import Pricing from "./components/Pricing/Pricing.jsx"
+import Reviews from "./components/Reviews/Reviews.jsx"
 import "./tifin.css";
 
 const Tiffin_main = () => {
@@ -61,6 +62,7 @@ const Tiffin_main = () => {
       </div>
       <CustomTiffin />
       <Pricing/>
+      <Reviews/>
     </div>
   );
 };
